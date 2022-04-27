@@ -1,0 +1,18 @@
+#!/bin/sh
+CWD=`pwd`
+cd ~
+# Check if previously setup
+RScripts=`which R-PkgInstall | grep no`
+echo $RScripts
+if [ -z $RScripts -unset ]; then
+  git clone https://github.com/ncsu-stats-it/hpc
+  cd hpc/bin
+  chmod 755
+  echo "# R_Env" >> ~./bashrc
+  echo "module load use.own >> ~/.bashrc"
+  echo "."
+  /bin/cp -R /hpc/privatemodules ~
+  echo "module load hpc >> ~/.bashrc"
+else
+  echo "R_env already configured run R-ScriptsUpdate"
+fi
