@@ -1,0 +1,28 @@
+#!/bin/sh
+##
+if [ $# -lt 1 ]; then
+        echo "Usage: $0 <RProgram>"
+        exit 0
+fi
+if [ -f $1 ]
+  then 
+     PKGS=`cat $1 | grep -v \# | grep library | cut -f2 -d\( | cut -f1 -d\)`
+     CLNPKGS=`echo $PKGS | sed -e 's/"//g'`
+     CLNPKGS=`echo $CLNPKGS | sed -e 's/\ *$//g'`
+     if [ -z "$CLNPKGS" ] ; then
+	     echo -e "No \033[1;31mlibrary \033[0;30mmstatements found in \033[1;30mm$1 \033[0m"
+             PKGS=`cat $1 | grep -v \# | grep require | cut -f2 -d\( | cut -f1 -d\)`
+             CLNPKGS=`echo $PKGS | sed -e 's/"//g'`
+             CLNPKGS=`echo $CLNPKGS | sed -e 's/\ *$//g'`
+             if [ -z "$CLNPKGS" ] ; then
+	          echo -e "No \033[1;31mrequire \033[0;30mstatements found in \033[1;30m$1 \033[0m"
+		  exit 0
+	     fi
+     fi
+     if [ ! -z "$CLNPKGS" ] ; then
+         /usr/local/bin/R-PkgCheck $CLNPKGS
+     fi
+  else 
+     echo "error: " $1 "not found..."
+     echo "$0 <RProgram>"
+fi

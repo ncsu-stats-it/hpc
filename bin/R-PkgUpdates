@@ -1,0 +1,3 @@
+#!/bin/sh
+##
+R -e "update.packages(ask=FALSE, dependencies=c('Suggests'), repos='https://cran.rstudio.com/')"

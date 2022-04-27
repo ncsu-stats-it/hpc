@@ -1,0 +1,20 @@
+#!/bin/sh
+##
+if [ $# -lt 1 ]; then
+        echo "Usage: $0 {RPackage}"
+        exit 0
+fi
+
+CWD=`pwd`
+# RSYSLIB="$HOME/.conda/envs/$CONDA_DEFAULT_ENV/lib/R/library"
+# cd $RSYSLIB
+y=`echo ${@} | sed -e "s/,/\ /g"`
+for a in $y
+  do 
+    if [ -f $CWD/$a ]
+       then
+	  R -e "install.packages('$CWD/$a',dependencies=TRUE,repos=NULL,type=\"source\")"
+       else
+	  R -e "install.packages('$a',dependencies=TRUE,repos=\"https://cran.rstudio.com/\")"
+    fi
+done

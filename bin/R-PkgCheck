@@ -1,0 +1,29 @@
+#!/bin/sh
+##
+if [ $# -lt 1 ]; then
+        echo "Usage: $0 {RPackage} {RPackage}"
+        exit 0
+fi
+CWD=`pwd`
+y=`echo ${@} | sed -e "s/,/\ /g"`
+for a in $y
+do
+   FOUND="0"  
+   if [ -d $R_LIBS_USER/$a ]
+      then
+	  echo $a installed in $R_LIBS_USER
+	  FOUND="1"
+   fi
+   RSYSLIB="$HOME/.conda/envs/$CONDA_DEFAULT_ENV/lib/R/library"
+   cd $RSYSLIB
+   if [ -d $RSYSLIB/$a ]
+      then
+         echo "$a installed in [ $CONDA_DEFAULT_ENV ]"
+	 FOUND="1"
+   fi
+   cd $CWD
+   if [ "$FOUND" = "0" ]; then 
+	echo -e "R Package \033[1;31m$a\033[0m is \033[1;30mNOT\033[0m installed."
+	FOUND="0"
+   fi
+done
