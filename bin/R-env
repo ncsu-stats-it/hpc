@@ -13,6 +13,18 @@ if [ ! $RScripts ]; then
   echo "."
   /bin/cp -R $HOME/hpc/privatemodules ~
   echo "module load hpc" >> $HOME/.bashrc
+  conda_check=`conda env list | grep r_env'
+  if [ ! $conda_check ]; then
+      echo "ERROR: Found previous conda r_env"
+      echo "Please run: conda rmeove -n r_env"
+      exit 0
+  fi
+  conda create -n r_env python=3.10.4 
+  conda activate  r_env
+  conda install -c conda-forge r-base=4.1.3 
+  conda install -c conda-forge r-base=4.1.3 r-devtools
+  conda install -c conda-forge r-base=4.1.3 r-ragg 
+  echo "conda activate r_env" >> $HOME/.bashrc
 else
   echo "R_env already configured run R-ScriptsUpdate"
 fi
