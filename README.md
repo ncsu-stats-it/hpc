@@ -8,8 +8,7 @@ You will need to request and be given access prior to attempting any of these in
 git clone https://github.com/ncsu-stats-it/hpc
 cd hpc
 sh ./install-hpc-env
-source ~/.tcshrc
-R-env
+sh bin/R-env
 source ~/.tcshrc
 which R
 which R-PkgInstall
