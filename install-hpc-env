@@ -1,0 +1,14 @@
+#!/bin/sh
+NOW=`date +%Y%m%d-%H%M%S`
+echo "[Adding] .tcshrc .tcshrc-aliases -> $HOME"
+if [ -f "$HOME/.tcshrc" ]; then
+  /bin/mv $HOME/.tcshrc $HOME/.tcshrc.$NOW.bkup
+fi
+/bin/cp $HOME/hpc/skel/tcshrc $HOME/.tcshrc
+if [ -f "$HOME/.tcsh_aliases" ]; then
+  /bin/mv $HOME/.tcsh_aliases $HOME/.tcsh_aliases.$NOW.bkup
+fi
+/bin/cp $HOME/hpc/skel/tcsh_aliases $HOME/.tcsh_aliases
+/bin/cp $HOME/hpc/module-help.txt $HOME
+echo "sh bin/R-env"
+echo "source ~/.tcshrc"
