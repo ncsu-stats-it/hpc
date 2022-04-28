@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## modules privatemodules/hpc
+##
+## privatemodules/hpc .  First Module
+##
+proc ModulesHelp { } {
+        global version prefix
+
+        puts stderr "hpc - sets the Environment for personal hpc/bin/R-scripts"
+}
+
+module-whatis	"loads the modules environment for hpc/bin/R-scripts"
+
+# for Tcl script use only
+set	version		1.0.0
+set	prefix          ~/hpc
+set	exec_prefix	~/hpc/bin
+
+
+setenv		MODULESHOME	$prefix
+prepend-path    PATH   		$exec_prefix
+
