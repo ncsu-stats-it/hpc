@@ -14,16 +14,27 @@ do
 	  echo $a installed in $R_LIBS_USER
 	  FOUND="1"
    fi
-   RSYSLIB="$HOME/.conda/envs/$CONDA_DEFAULT_ENV/lib/R/library"
+   if [ -d $HOME/R/x86_64-pc-linux-gnu-library/$RVER/$a ]
+      then
+	  echo $a installed in $HOME/R/x86_64-pc-linux-gnu-library/$RVER
+	  FOUND="1"
+   fi
+   if ! [ $R_HOME ];
+      then
+          RHOME=`which R`
+          RPATH=$(dirname "$RHOME")
+          R_HOME=$(dirname "$RPATH")
+      fi
+   RSYSLIB=$R_HOME/lib64/R/library/
    cd $RSYSLIB
    if [ -d $RSYSLIB/$a ]
       then
-         echo "$a installed in [ $CONDA_DEFAULT_ENV ]"
+         echo "$a installed in [ $RSYSLIB ]"
 	 FOUND="1"
    fi
    cd $CWD
    if [ "$FOUND" = "0" ]; then 
-	echo -e "R Package \033[1;31m$a\033[0m is \033[1;30mNOT\033[0m installed."
+	echo -e "R Package \033[1;31m$a\033[0m is \033[1;35mNOT\033[0m installed."
 	FOUND="0"
    fi
 done

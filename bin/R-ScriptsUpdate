@@ -1,15 +1,12 @@
 #!/bin/sh
 echo "Updating information from https://github.com/ncsu-stats-it/hpc"
 CWD=`pwd`
-RScripts=`which R-PkgInstall`
-RScriptsPath=$(dirname "$RScripts")
-echo $RScriptsPath
-cd $RScriptsPath
-cd ../..
-pwd
+cd $HOME
 \rm -rf hpc
 git clone https://github.com/ncsu-stats-it/hpc 
 cd hpc/bin
-pwd
 chmod 755 *
+cd $HOME/privatemodules
+/bin/cp $HOME/hpc/privatemodules/* .
+echo "[VERIFY] "module load R-useown" ~/.tcshrc" 
 cd $CWD

@@ -1,33 +1,17 @@
 #!/bin/sh
-CWD=`pwd`
-R_Env=4-1-3
-R_Ver=4.1.3
-cd ~
-# Check if previously setup
-RScripts=`which R-PkgInstall`
-cd $HOME
-if [ ! $RScripts ]; then
-  git clone https://github.com/ncsu-stats-it/hpc
-  cd hpc/bin
-  chmod 755 *
-  echo "# R_Env" >> $HOME/.bashrc
-  echo "module load use.own" >> $HOME/.bashrc
-  echo "."
-  /bin/cp -R $HOME/hpc/privatemodules ~
-  echo "module load hpc" >> $HOME/.bashrc
-  conda_check=`conda env list | grep $R_Env'
-  if [ ! $conda_check ]; then
-      echo "ERROR: Found previous conda $R_Env"
-      echo "Please run: conda rmeove -n $R_Env"
-      exit 0
-  fi
-  conda create -n $R_Env  
-  conda activate  $R_Env
-  conda install -y -c conda-forge r-base=$R_Ver
-  conda install -y -c conda-forge r-essentials
-  conda install -y -c conda-forge r-base=$R_Ver r-devtools
-  conda install -y -c conda-forge r-base=$R_ver r-ragg 
-  echo "conda activate $R_Env" >> $HOME/.bashrc
-else
-  echo "R_Env already configured run R-ScriptsUpdate"
-fi
+RVER=4.1
+echo " " >> $HOME/.tcshrc
+echo "# R Configuration " >> $HOME/.tcshrc
+echo "# Will need to change version once default R versino has changed." >> $HOME/.tcshrc
+echo "setenv RVER \"$RVER\"" >> $HOME/.tcshrc
+echo "if  ( ! -d /share/\$GROUP/\$USER/R-Library/\$RVER ) then" >> $HOME/.tcshrc
+echo "   mkdir -p /share/\$GROUP/\$USER/R-Library/\$RVER" >> $HOME/.tcshrc
+echo "endif " >> $HOME/.tcshrc
+echo "setenv R_LIBS_USER /share/\$GROUP/\$USER/R-Library/\$RVER" >> $HOME/.tcshrc
+echo " " >> $HOME/.tcshrc
+echo "# Load Software Modules" >> $HOME/.tcshrc
+echo "module load use.own" >> $HOME/.tcshrc
+echo "module load R-useown" >> $HOME/.tcshrc
+echo "module load R/4.1.2-gcc4.8.5" >> $HOME/.tcshrc
+echo " " >> $HOME/.tcshrc
+chmod 755 $HOME/hpc/bin/*
