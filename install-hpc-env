@@ -3,11 +3,11 @@ NOW=`date +%Y%m%d-%H%M%S`
 echo "[Adding] .tcshrc .tcshrc-aliases -> $HOME"
 if [ -f "$HOME/.tcshrc" ]; then
   /bin/mv $HOME/.tcshrc $HOME/.tcshrc.$NOW.bkup
-  /bin/cp $HOME/hpc/skel/.tcshrc $HOME
+  /bin/cp $HOME/hpc/skel/tcshrc $HOME/.tcshrc
 fi
 if [ -f "$HOME/.tcsh_aliases" ]; then
   /bin/mv $HOME/.tcsh_aliases $HOME/.tcsh_aliases.$NOW.bkup
-  /bin/cp $HOME/hpc/skel/.tcsh_aliases $HOME
+  /bin/cp $HOME/hpc/skel/tcsh_aliases $HOME/.tcsh_aliases
 fi
 /bin/cp $HOME/hpc/module-help.txt $HOME
 echo ~source ~/.tcshrc"
