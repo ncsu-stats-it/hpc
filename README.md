@@ -6,10 +6,11 @@ You will need to request and be given access prior to attempting any of these in
 <hr>
 <pre>ssh UNITYID@login.hpc.ncsu.edu
 git clone https://github.com/ncsu-stats-it/hpc
-cd hpc/bin
-sh ./R-env
-exit
-ssh UNITYID@login.hpc.ncsu.edu
+cd hpc
+sh ./install-hpc-env
+source ~/.tcshrc
+R-env
+source ~/.tcshrc
 which R
 which R-PkgInstall
 R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival","fields"
