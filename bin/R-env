@@ -14,5 +14,5 @@ echo "module load use.own" >> $HOME/.tcshrc
 echo "module load R-useown" >> $HOME/.tcshrc
 echo "module load R/4.1.2-gcc4.8.5" >> $HOME/.tcshrc
 echo " " >> $HOME/.tcshrc
-/bin/cp $HOME/hpc/privatemodules/* $HOME/privatemodules/
+/bin/cp -R $HOME/hpc/privatemodules $HOME
 chmod 755 $HOME/hpc/bin/*
