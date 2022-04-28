@@ -1,0 +1,5 @@
+# Module Help
+module load R  --> Loads Default R Module
+module avail   --> Shows Available Modules
+module list    --> Shows Loaded Modules
+module purge R --> Unloads Default R Module
