@@ -1,0 +1,19 @@
+# NCSU Environment
+set history = 100
+# Color Settings
+set     red="%{\033[0;31m%}"
+set   green="%{\033[0;32m%}"
+set  yellow="%{\033[0;33m%}"
+set    blue="%{\033[0;34m%}"
+set magenta="%{\033[0;35m%}"
+set    cyan="%{\033[0;36m%}"
+set   white="%{\033[0;37m%}"
+set     end="%{\033[0m%}"
+# set prompt="${red}%n@%m:${blue}%~ $ ${end} "
+set prompt="${red}%n@ncsu-hpc:${blue}%~ $ ${end} "
+
+# Parse Alias File
+if ( -f $HOME/.tcsh_aliases ) then
+  source $HOME/.tcsh_aliases
+endif
+
