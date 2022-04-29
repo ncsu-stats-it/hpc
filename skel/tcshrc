@@ -9,8 +9,13 @@ set magenta="%{\033[0;35m%}"
 set    cyan="%{\033[0;36m%}"
 set   white="%{\033[0;37m%}"
 set     end="%{\033[0m%}"
-# set prompt="${red}%n@%m:${blue}%~ $ ${end} "
-set prompt="${red}%n@ncsu-hpc:${blue}%~ $ ${end} "
+
+set CURHOST=`hostname | grep login`
+if  ! ( "$CURHOST" == "") the
+   set prompt="${red}%n@ncsu-hpc:${blue}%~ $ ${end} "
+else
+   set prompt="${red}%n@%m:${blue}%~ $ ${end} "
+endif
 
 # Parse Alias File
 if ( -f $HOME/.tcsh_aliases ) then
