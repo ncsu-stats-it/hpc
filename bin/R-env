@@ -1,5 +1,6 @@
 #!/bin/sh
 RVER=4.1
+RMODULE="module load R/4.1.2-gcc4.8.5"
 echo " " >> $HOME/.tcshrc
 echo "# R Configuration " >> $HOME/.tcshrc
 echo "# Will need to change version once default R versino has changed." >> $HOME/.tcshrc
@@ -12,7 +13,7 @@ echo " " >> $HOME/.tcshrc
 echo "# Load Software Modules" >> $HOME/.tcshrc
 echo "module load use.own" >> $HOME/.tcshrc
 echo "module load R-useown" >> $HOME/.tcshrc
-echo "module load R/4.1.2-gcc4.8.5" >> $HOME/.tcshrc
+echo $RMODULE >> $HOME/.tcshrc
 echo " " >> $HOME/.tcshrc
 /bin/cp -R $HOME/hpc/privatemodules $HOME
 chmod 755 $HOME/hpc/bin/*
