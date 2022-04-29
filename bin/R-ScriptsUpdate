@@ -7,12 +7,13 @@ NEWMODULE="load module R/4.1.2-gcc4.8.5"
 echo "Updating information from https://github.com/ncsu-stats-it/hpc"
 CWD=`pwd`
 cd $HOME
-\rm -rf hpc
-git clone https://github.com/ncsu-stats-it/hpc 
-cd hpc/bin
+# \rm -rf hpc
+# git clone https://github.com/ncsu-stats-it/hpc 
+cd $HOME/hpc/bin
 chmod 755 *
 cd $HOME/privatemodules
 /bin/cp $HOME/hpc/privatemodules/* .
+cd $HOME
 ##########
 
 ##########
