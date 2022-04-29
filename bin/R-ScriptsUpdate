@@ -1,7 +1,7 @@
 #!/bin/sh
 #########  Change the information below to be the R-Version you wish to use.
-NEWRVER="setenv RVER \"3.5\""
-NEWMODULE="load module R/3.5.1-gcc4.8.5"
+NEWRVER="setenv RVER \"4.1\""
+NEWMODULE="load module R/4.1.2-gcc4.8.5"
 ##########
 ########## Redowload from Github.com
 echo "Updating information from https://github.com/ncsu-stats-it/hpc"
@@ -23,7 +23,7 @@ OLDRVER=`cat $HOME/.tcshrc | grep RVER | head -1`
 RMODULE=`cat .tcshrc | grep module | grep R | grep -v use`
 if [ "$OLDRVER" ]; then
    if ! [ "$OLDRVER" = "$NEWRVER" ]; then
-      echo "Changing .tcsh to R-$NEWRVER"
+      echo "Changing .tcshrc to R-$NEWRVER"
       sed -i "s|$OLDRVER|$NEWRVER|" $HOME/.tcshrc
    fi
 fi
@@ -31,7 +31,7 @@ fi
 if [ "$RMODULE" ]; then
       OLDMODULE=${RMODULE/\//\\/}
       if ! [ "$RMODULE" = "$NEWMODULE" ]; then
-          echo "Changing .tcsh to $NEWMODULE"
+          echo "Changing .tcshrc to $NEWMODULE"
           sed -i "s|$OLDMODULE|$NEWMODULE|" $HOME/.tcshrc
       fi
    else
