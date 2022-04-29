@@ -11,7 +11,7 @@ set   white="%{\033[0;37m%}"
 set     end="%{\033[0m%}"
 
 set CURHOST=`hostname | grep login`
-if  ! ( "$CURHOST" == "") the
+if  ! ( "$CURHOST" == "") then
    set prompt="${red}%n@ncsu-hpc:${blue}%~ $ ${end} "
 else
    set prompt="${red}%n@%m:${blue}%~ $ ${end} "
