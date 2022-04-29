@@ -4,10 +4,10 @@ NEWRVER="setenv RVER \"4.1\""
 NEWMODULE="load module R/4.1.2-gcc4.8.5"
 ##########
 ########## Redowload from Github.com
-echo "Updating information from https://github.com/ncsu-stats-it/hpc"
 CWD=`pwd`
 cd $HOME
 # \rm -rf hpc
+# echo "Updating information from https://github.com/ncsu-stats-it/hpc"
 # git clone https://github.com/ncsu-stats-it/hpc 
 cd $HOME/hpc/bin
 chmod 755 *
