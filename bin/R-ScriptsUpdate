@@ -10,7 +10,7 @@ cd $HOME
 echo "Updating information from https://github.com/ncsu-stats-it/hpc"
 git clone https://github.com/ncsu-stats-it/hpc $TMPHPC
 cd $TMPHPC
-rsync -rltz --delete * $HOME/hpc
+rsync -rltpz --delete * $HOME/hpc
 cd $HOME/hpc/bin
 chmod 755 *
 cd $HOME/privatemodules
