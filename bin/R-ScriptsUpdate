@@ -5,15 +5,18 @@ NEWMODULE="module load R/4.1.2-gcc4.8.5"
 ##########
 ########## Redowload from Github.com
 CWD=`pwd`
+TMPHPC=hpc-$$
 cd $HOME
-# \rm -rf hpc
-# echo "Updating information from https://github.com/ncsu-stats-it/hpc"
-# git clone https://github.com/ncsu-stats-it/hpc 
+echo "Updating information from https://github.com/ncsu-stats-it/hpc"
+git clone https://github.com/ncsu-stats-it/hpc $TMPHPC
+cd $TMPHPC
+rsync -rltz --delete * $HOME/hpc
 cd $HOME/hpc/bin
 chmod 755 *
 cd $HOME/privatemodules
 /bin/cp $HOME/hpc/privatemodules/* .
 cd $HOME
+/bin/rm -rf $TMPHPC
 ##########
 
 ##########
