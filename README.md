@@ -17,7 +17,6 @@ R-PkgCheck "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","
 <hr>
 ## Updates ##
 Periodically a new version of R will be release.
-R-ScriptsUpdate
+<pre>R-ScriptsUpdate
 exit
-ssh UNITYID@login.hpc.ncsu.edu 
-which R
+ssh UNITYID@login.hpc.ncsu.edu</pre>
