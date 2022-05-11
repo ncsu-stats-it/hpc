@@ -1,6 +1,6 @@
 #!/bin/sh
-RVER=4.1
-RMODULE="module load R/4.1.2-gcc4.8.5"
+RVER=4.2
+RMODULE="module load R/4.2.0-gcc4.8.5"
 echo " " >> $HOME/.tcshrc
 echo "# R Configuration " >> $HOME/.tcshrc
 echo "# Will need to change version once default R versino has changed." >> $HOME/.tcshrc
