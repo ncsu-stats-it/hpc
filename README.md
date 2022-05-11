@@ -15,8 +15,8 @@ which R-PkgInstall
 R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival","fields"
 R-PkgCheck "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival","fields"</pre>
 <hr>
-## Updates ##
-Periodically a new version of R will be release.
+<h2>Updated R</h2>
+Periodically a new version of R will be release.<br>
 <pre>R-ScriptsUpdate
 exit
 ssh UNITYID@login.hpc.ncsu.edu</pre>
