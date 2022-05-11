@@ -14,3 +14,10 @@ which R
 which R-PkgInstall
 R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival","fields"
 R-PkgCheck "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival","fields"</pre>
+<hr>
+## Updates ##
+Periodically a new version of R will be release.
+R-ScriptsUpdate
+exit
+ssh UNITYID@login.hpc.ncsu.edu 
+which R
