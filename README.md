@@ -41,3 +41,11 @@ ssh UNITYID@login.hpc.ncsu.edu</pre>
 <li><strong>[Repeat Option-2 (2 Cores)]</strong>
 <li>bwsubmit 2 Rscript weather.R</li>
 </ol>
+<hr>
+<h2>R Package Administration</h2>
+<ul>
+<li>R-ProgramCheck weather.R</li>
+<li>R-PkgCheck robustHD</li>
+<li>R-PkgInstall robustHD</li>
+<li>R-Pkgcheck robustHD</li>
+</ul>
