@@ -77,7 +77,7 @@ case $APP in
 esac
 BATCHSCRIPT=submit_$SHORTNAME.tcsh
 # Create Batch Script
-echo '#!/usr/bin/tcsh' > $BATCHSCRIPT
+echo '#!/bin/tcsh' > $BATCHSCRIPT
 echo "" >> $BATCHSCRIPT
 if [ $CORES ]; then
 	echo "#BSUB -n $CORES" >> $BATCHSCRIPT
