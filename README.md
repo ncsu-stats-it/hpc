@@ -35,11 +35,11 @@ ssh UNITYID@login.hpc.ncsu.edu</pre>
 <li>ls weather.pdf</li>
 <li>less submit_weather.o</li>
 <li>less submit_weather.tcsh</li>
-<li>Repeat Option 1 (2 Cores)
+<li>Repeat **[Option 1 (2 Cores)]**
 <li>{modify} weather.R</li>
 <li>{modify} submit_weather.tcsh</li>
 <li>$ qsub submit_weather.tcsh</li>
-<li>Repeat Option 2 (2 Cores)
+<li>Repeat **[Option 2 (2 Cores)]**
 <li>{modify} weather.R</li>
 <li>bwsubmit 2 Rscript weather.R</li>
 </ol>
