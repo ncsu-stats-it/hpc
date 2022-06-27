@@ -97,5 +97,5 @@ echo "" >> $BATCHSCRIPT
 ##echo "" >> $BATCHSCRIPT
 
 echo "$APP $PROG" >> $BATCHSCRIPT
-/usr/local/lsf/10.1/linux3.10-glibc2.17-x86_64/bin/qsub $BATCHSCRIPT
+/usr/local/lsf/10.1/linux3.10-glibc2.17-x86_64/bin/qsub < $BATCHSCRIPT
 ## /bin/rm $BATCHSCRIPT
