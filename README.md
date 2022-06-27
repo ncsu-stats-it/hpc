@@ -1,4 +1,4 @@
-<h1>hpc</h1>
+<h1>HPC</h1>
 The folowing will setup your base R-environment and the minimal packages you will need to start running R simulations on the NCSU HPC linux cluster.
 https://hpc.ncsu.edu/main.php<br>
 &nbsp;<br>
