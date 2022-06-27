@@ -7,6 +7,7 @@ You will need to request and be given access prior to attempting any of these in
 <pre>ssh UNITYID@login.hpc.ncsu.edu
 git clone https://github.com/ncsu-stats-it/hpc
 cd hpc
+git config merge.defaultToUpstream true
 sh ./install-hpc-env
 sh bin/R-env
 source ~/.tcshrc
