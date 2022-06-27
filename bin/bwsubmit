@@ -86,7 +86,7 @@ else
 	echo "#BSUB -n 1" >> $BATCHSCRIPT
 fi
 echo "#BSUB -J $SHORTNAME" >> $BATCHSCRIPT
-echo "#BSUB -W 14395" >> $BATCHSCRIPT
+echo "#BSUB -W 239:55" >> $BATCHSCRIPT
 echo "#BSUB -oo $SHORTNAME.%J.out" >> $BATCHSCRIPT
 echo "#BSUB -eo $SHORTNAME.%J.err" >> $BATCHSCRIPT
 echo "" >> $BATCHSCRIPT
