@@ -49,4 +49,4 @@ ssh UNITYID@login.hpc.ncsu.edu</pre>
 <li>R-PkgInstall robustHD</li>
 <li>R-Pkgcheck robustHD</li>
 </ul>
-<p>Occasionally you will <strong>not</strong> be able to install an R package.  When this occurs send an email to <a href="mailto:oit_hpc@help.ncsu.edu">oit_hpc@help.ncsu.edu</a> and ask to have the package installed.  This happens when a OS library/file is needed for the R package.</p>
+<p>Occasionally you will <strong>not</strong> be able to install an R package.  When this occurs send an email to <a href="mailto:oit_hpc@help.ncsu.edu">oit_hpc@help.ncsu.edu</a> and ask to have the package installed.  This happens when an OS library/file is needed for the R package.</p>
