@@ -20,7 +20,7 @@ Periodically a new version of R will be release.<br>
 exit
 ssh UNITYID@login.hpc.ncsu.edu</pre>
 <hr>
-<h2>Running a R Program</h2>
+<h2>Running R Program</h2>
 <ol>
 <li>transfer programs and data to cluster</br>
 <strong>/share/statistics/$USER/</strong> (Shared Space = Larger Quota)</li>
@@ -35,11 +35,9 @@ ssh UNITYID@login.hpc.ncsu.edu</pre>
 <li>ls weather.pdf</li>
 <li>less submit_weather.o</li>
 <li>less submit_weather.tcsh</li>
-<li>Repeat <strong>[Option 1 (2 Cores)]</strong>
-<li>{modify} weather.R</li>
+<li><strong>[Repeat Option-1 (2 Cores)]</strong>
 <li>{modify} submit_weather.tcsh</li>
 <li>$ qsub submit_weather.tcsh</li>
-<li>Repeat <strong>[Option 2 (2 Cores)]</strong>
-<li>{modify} weather.R</li>
+<li><strong>[Repeat Option-2 (2 Cores)]</strong>
 <li>bwsubmit 2 Rscript weather.R</li>
 </ol>
