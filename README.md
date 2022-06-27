@@ -19,3 +19,19 @@ Periodically a new version of R will be release.<br>
 <pre>R-ScriptsUpdate
 exit
 ssh UNITYID@login.hpc.ncsu.edu</pre>
+<hr>
+<h2>Running a R Program</h2>
+<ol>
+<li>transfer programs and data to cluster</br>
+<strong>/share/statistics/$USER/</strong> (Shared Space = Larger Quota)</li>
+<li>See: <a href="https://hpc.ncsu.edu/Documents/CopyFiles.php">https://hpc.ncsu.edu/Documents/CopyFiles.php</a></li>
+<li>ssh UNITYID@login.hpc.ncsu.edu</li>
+<li>cd /share/statistics/$USER/</li>
+<li>ls</li>
+<li>cp /usr/local/apps/samples/guide/weather.R .
+<li>ls</li>
+<li>bwsubmit 1 Rscript weather.R</li>
+<li>bjobs</li>
+<li>ls weather.pdf</li>
+<li>ls submit*</li>
+</ol>
