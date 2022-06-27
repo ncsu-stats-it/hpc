@@ -75,7 +75,7 @@ case $APP in
 		exit 0
 	;;
 esac
-BATCHSCRIPT=submit_$SHORTNAME.tcsh
+BATCHSCRIPT=run_$SHORTNAME.tcsh
 # Create Batch Script
 echo '#!/bin/tcsh' > $BATCHSCRIPT
 echo "" >> $BATCHSCRIPT
