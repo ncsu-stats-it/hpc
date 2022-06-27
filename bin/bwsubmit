@@ -80,13 +80,13 @@ BATCHSCRIPT=submit_$SHORTNAME.tcsh
 echo '#!/bin/tcsh' > $BATCHSCRIPT
 echo "" >> $BATCHSCRIPT
 if [ $CORES ]; then
-	echo "#BSUB -n $CORES          # Number of Cores" >> $BATCHSCRIPT
-	echo "#BSUB -R span[hosts=1]  # Number of Hosts" >> $BATCHSCRIPT
+	echo "#BSUB -n $CORES               # Number of Cores" >> $BATCHSCRIPT
+	echo "#BSUB -R span[hosts=1]     # Number of Hosts" >> $BATCHSCRIPT
 else
 	echo "#BSUB -n 1               # Number of Cores" >> $BATCHSCRIPT
 fi
 echo "#BSUB -J $SHORTNAME            # Job Name" >> $BATCHSCRIPT
-echo "#BSUB -W 14395        # Wall Clock time (Minutes)" >> $BATCHSCRIPT
+echo "#BSUB -W 14395             # Wall Clock time (Minutes)" >> $BATCHSCRIPT
 echo "#BSUB -oo $SHORTNAME.%J.out    # Output File" >> $BATCHSCRIPT
 echo "#BSUB -eo $SHORTNAME.%J.err    # Error File" >> $BATCHSCRIPT
 echo "" >> $BATCHSCRIPT
