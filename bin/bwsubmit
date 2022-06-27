@@ -1,0 +1,99 @@
+#!/bin/bash
+if [ $# -lt 1 ]
+then
+	echo "Usage: $0 [cores] [application] [program]"
+	echo "{Application Choices} R"
+	exit 0
+fi
+CWD=`pwd`
+PARAMS=${@}
+APP=$1
+NAME=$2
+if [ $LOGNAME == "root" ]; then
+        echo "You are 'root' job aborted."
+        exit 0
+fi
+
+case $APP in 
+	R|Rscript)
+		PROG=$2
+		SHORTNAME=`echo $PROG | cut -f1 -d"."`
+		/usr/bin/dos2unix $PROG 2>/dev/null
+		shift
+                PROG=${@}
+		APP="Rscript"
+	;;
+        [1-32]*)
+		CORES=$1
+		NAPP=$2
+		APP=$2
+		NAME=$3
+		case $NAPP in 
+  		   R|Rscript)
+		      PROG=$3
+		      SHORTNAME=`echo $PROG | cut -f1 -d"."`
+                      /usr/bin/dos2unix $PROG 2>/dev/null
+                      shift
+                      shift
+                      PROG=${@}
+		      APP="Rscript"
+                   ;;
+		   exec)
+                      PROG=$3
+                      APP=''
+                      chmod 755 $3
+                      if ! [ -x $PROG ]; then
+                         echo "ERROR: $PROG not found!"
+                         exit 0
+                      fi
+                      shift
+                      shift
+                      PROG=${@}
+                   ;;
+                   * )
+                       echo "ERROR: bwsubmit [cores<32] [application] [program]"
+                       echo "{Application Choices} R"
+                       exit 0
+                   ;;
+                esac
+	;;
+	exec)
+		PROG=$2
+		APP=''
+	        dos2unix $2
+		chmod 755 $2		
+		if ! [ -x $PROG ]; then
+			echo "ERROR: $PROG not found!"
+			exit 0
+		fi
+		shift
+		PROG=${@}
+	;;
+	* )
+		echo "ERROR: bwsubmit [cores] [application] [program]"
+		echo "{Application Choices} R"
+		exit 0
+	;;
+esac
+BATCHSCRIPT=$CWD/$LOGNAME\_$NAME\_$$
+# Create Batch Script
+echo '#!/bin/tcsh' > $BATCHSCRIPT
+echo "" >> $BATCHSCRIPT
+echo "#BSUB -W 14395" >> $BATCHSCRIPT
+if [ $CORES ]; then
+	echo "#BSUB -n $CORES" >> $BATCHSCRIPT
+	echo "#BSUB -R span[hosts=1]" >> $BATCHSCRIPT
+else
+	echo "#BSUB -n 1" >> $BATCHSCRIPT
+fi
+echo "#BSUB -j $SHORTNAME" >> $BATCHSCRIPT
+echo "#BSUB -oo $SHORTNAME.%J.out" >> $BATCHSCRIPT
+echo "#BSUB -eo $SHORTNAME.%J.err" >> $BATCHSCRIPT
+echo "" >> $BATCHSCRIPT
+
+echo "module load R/4.2.0-gcc4.8.5" >> $BATCHSCRIPT
+echo "module load use.own" >> $BATCHSCRIPT
+echo "module load R-useown" >> $BATCHSCRIPT
+echo "$APP $PROG" >> $BATCHSCRIPT
+bsub $BATCHSCRIPT
+/bin/rm $BATCHSCRIPT
