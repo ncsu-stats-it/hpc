@@ -80,22 +80,22 @@ BATCHSCRIPT=submit_$SHORTNAME.tcsh
 echo '#!/bin/tcsh' > $BATCHSCRIPT
 echo "" >> $BATCHSCRIPT
 if [ $CORES ]; then
-	echo "#BSUB -n $CORES" >> $BATCHSCRIPT
-	echo "#BSUB -R span[hosts=1]" >> $BATCHSCRIPT
+	echo "#BSUB -n $CORES          # Number of Cores" >> $BATCHSCRIPT
+	echo "#BSUB -R span[hosts=1]  # Number of Hosts" >> $BATCHSCRIPT
 else
-	echo "#BSUB -n 1" >> $BATCHSCRIPT
+	echo "#BSUB -n 1               # Number of Cores" >> $BATCHSCRIPT
 fi
-echo "#BSUB -J $SHORTNAME" >> $BATCHSCRIPT
-echo "#BSUB -W 239:55" >> $BATCHSCRIPT
-echo "#BSUB -oo $SHORTNAME.%J.out" >> $BATCHSCRIPT
-echo "#BSUB -eo $SHORTNAME.%J.err" >> $BATCHSCRIPT
+echo "#BSUB -J $SHORTNAME            # Job Name" >> $BATCHSCRIPT
+echo "#BSUB -W 14395        # Wall Clock time (Minutes)" >> $BATCHSCRIPT
+echo "#BSUB -oo $SHORTNAME.%J.out    # Output File" >> $BATCHSCRIPT
+echo "#BSUB -eo $SHORTNAME.%J.err    # Error File" >> $BATCHSCRIPT
 echo "" >> $BATCHSCRIPT
 
-## echo "module load use.own" >> $BATCHSCRIPT
-## echo "module load R-useown" >> $BATCHSCRIPT
-## echo "module load R/4.2.0-gcc4.8.5" >> $BATCHSCRIPT
-##echo "" >> $BATCHSCRIPT
+echo "module load use.own" >> $BATCHSCRIPT
+echo "module load R-useown" >> $BATCHSCRIPT
+echo "module load R/4.2.0-gcc4.8.5" >> $BATCHSCRIPT
+echo "" >> $BATCHSCRIPT
 
 echo "$APP $PROG" >> $BATCHSCRIPT
-/usr/local/lsf/10.1/linux3.10-glibc2.17-x86_64/bin/qsub < $BATCHSCRIPT
+/usr/local/lsf/10.1/linux3.10-glibc2.17-x86_64/bin/bsub < $BATCHSCRIPT
 ## /bin/rm $BATCHSCRIPT
