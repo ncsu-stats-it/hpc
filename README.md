@@ -5,16 +5,14 @@ https://hpc.ncsu.edu/main.php<br>
 You will need to request and be given access prior to attempting any of these instructions.
 <hr>
 <pre>ssh UNITYID@login.hpc.ncsu.edu
-git clone https://github.com/ncsu-stats-it/hpc
-cd hpc
-git config merge.defaultToUpstream true
-sh ./install-hpc-env
-sh bin/R-env
-source ~/.tcshrc
-which R
-which R-PkgInstall
-R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival","fields"
-R-PkgCheck "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival","fields"</pre>
+$ git clone https://github.com/ncsu-stats-it/hpc
+$ cd hpc
+$ git config merge.defaultToUpstream true
+$ sh ./install-hpc-env
+$ sh ./bin/R-env
+$ cd
+$ source ~/.tcshrc
+$ which R
 <hr>
 <h2>Updated R</h2>
 Periodically a new version of R will be release.<br>
