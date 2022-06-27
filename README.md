@@ -13,6 +13,7 @@ $ sh ./bin/R-env
 $ cd
 $ source ~/.tcshrc
 $ which R
+</pre>
 <hr>
 <h2>Updated R</h2>
 Periodically a new version of R will be release.<br>
