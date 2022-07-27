@@ -16,8 +16,11 @@ $ which R
 <hr>
 <h2>Updated R</h2>
 Periodically a new version of R will be release.<br>
-<pre>R-ScriptsUpdate
-exit
+<pre>$ cd hpc
+$ git pull
+$ git merge
+$ sh ./bin/R-ScriptsUpdate
+$ exit
 ssh UNITYID@login.hpc.ncsu.edu</pre>
 <hr>
 <h2>Running R Program</h2>
