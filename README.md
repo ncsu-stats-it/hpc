@@ -18,7 +18,6 @@ $ which R
 Periodically a new version of R will be release.<br>
 <pre>$ cd hpc
 $ git pull
-$ git merge
 $ sh ./bin/R-ScriptsUpdate
 $ exit
 ssh UNITYID@login.hpc.ncsu.edu</pre>
