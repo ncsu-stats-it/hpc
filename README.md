@@ -3,7 +3,7 @@ The folowing will setup your base R-environment and the minimal packages you wil
 https://hpc.ncsu.edu/main.php<br>
 &nbsp;<br>
 If your campus email is: jdoe22@ncsu.edu <br>
-then UNITYID=jdoe22 
+then **UNITYID**=jdoe22 
 <hr>
 <pre>ssh UNITYID@login.hpc.ncsu.edu
 $ git clone https://github.com/ncsu-stats-it/hpc
