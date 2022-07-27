@@ -1,7 +1,7 @@
 #!/bin/sh
 #########  Change the information below to be the R-Version you wish to use.
 if [ $RVER = "4.2" ]; then
-   echo "Updated Not Needed"
+   echo "Update Not Needed"
    exit 0
 fi
 NEWRVER="setenv RVER \"4.2\""
