@@ -6,6 +6,16 @@ if [ $# -lt 1 ]; then
 fi
 CWD=`pwd`
 y=`echo ${@} | sed -e "s/,/\ /g"`
+if ! [ $R_HOME ];
+  then
+    RHOME=`which R 2>/dev/null`
+    RPATH=$(dirname "$RHOME")
+    R_HOME=$(dirname "$RPATH")
+fi
+if [ ! $RHOME ]; then
+  echo -e "ERROR: You need to \033[1;31mconda activate\033[0m your anaconda R environment."
+  exit 0
+fi
 for a in $y
 do
    FOUND="0"  
@@ -14,25 +24,11 @@ do
 	  echo $a installed in $R_LIBS_USER
 	  FOUND="1"
    fi
-   if [ -d $HOME/R/x86_64-pc-linux-gnu-library/$RVER/$a ]
+   if [ -d $R_HOME/lib/R/library/$a ]
       then
-	  echo $a installed in $HOME/R/x86_64-pc-linux-gnu-library/$RVER
-	  FOUND="1"
+          echo $a installed in $R_HOME/lib/R/library/
+          FOUND="1"
    fi
-   if ! [ $R_HOME ];
-      then
-          RHOME=`which R`
-          RPATH=$(dirname "$RHOME")
-          R_HOME=$(dirname "$RPATH")
-      fi
-   RSYSLIB=$R_HOME/lib64/R/library/
-   cd $RSYSLIB
-   if [ -d $RSYSLIB/$a ]
-      then
-         echo "$a installed in [ $RSYSLIB ]"
-	 FOUND="1"
-   fi
-   cd $CWD
    if [ "$FOUND" = "0" ]; then 
 	echo -e "R Package \033[1;31m$a\033[0m is \033[1;35mNOT\033[0m installed."
 	FOUND="0"

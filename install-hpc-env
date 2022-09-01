@@ -10,5 +10,5 @@ if [ -f "$HOME/.tcsh_aliases" ]; then
 fi
 /bin/cp $HOME/hpc/skel/tcsh_aliases $HOME/.tcsh_aliases
 /bin/cp $HOME/hpc/module-help.txt $HOME
-echo "sh $HOME/hpc/bin/R-env"
 echo "source ~/.tcshrc"
+echo "sh $HOME/hpc/bin/R-conda-init"

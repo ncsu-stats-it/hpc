@@ -12,13 +12,18 @@ set     end="%{\033[0m%}"
 
 set CURHOST=`hostname | grep login`
 if  ! ( "$CURHOST" == "") then
-   set prompt="${red}%n@ncsu-hpc:${blue}%~ $ ${end} "
+   set prompt="${red}hpc:${blue} %c$ ${end} "
 else
-   set prompt="${red}%n@%m:${blue}%~ $ ${end} "
+   set prompt="${red}%m:${blue} %c$ ${end} "
 endif
 
 # Parse Alias File
 if ( -f $HOME/.tcsh_aliases ) then
   source $HOME/.tcsh_aliases
 endif
+
+# Load Software Personal Modules
+module load use.own
+module load R-useown
+
 

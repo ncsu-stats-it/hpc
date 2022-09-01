@@ -6,5 +6,4 @@
 #BSUB -oo test.%J.out    # Output File
 #BSUB -eo test.%J.err    # Error File
 
-module load R/4.2.0-gcc4.8.5
 Rscript test.R

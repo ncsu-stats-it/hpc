@@ -10,9 +10,10 @@ $ git clone https://github.com/ncsu-stats-it/hpc
 $ cd hpc
 $ git config merge.defaultToUpstream true
 $ sh ./install-hpc-env
-$ sh ./bin/R-env
-$ cd
-$ source ~/.tcshrc
+$ source $HOME/.tcshrc
+$ sh ./bin/R-conda-init
+$ exit
+$ R-env
 $ which R
 </pre>
 <hr>
@@ -20,7 +21,6 @@ $ which R
 Periodically a new version of R will be release.<br>
 <pre>$ cd hpc
 $ git pull
-$ sh ./bin/R-ScriptsUpdate
 $ exit
 ssh UNITYID@login.hpc.ncsu.edu</pre>
 <hr>

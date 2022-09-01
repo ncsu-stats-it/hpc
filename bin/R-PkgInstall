@@ -9,6 +9,16 @@ CWD=`pwd`
 # RSYSLIB="$HOME/.conda/envs/$CONDA_DEFAULT_ENV/lib/R/library"
 # cd $RSYSLIB
 y=`echo ${@} | sed -e "s/,/\ /g"`
+if ! [ $R_HOME ];
+  then
+    RHOME=`which R 2>/dev/null`
+    RPATH=$(dirname "$RHOME")
+    R_HOME=$(dirname "$RPATH")
+fi
+if [ ! $RHOME ]; then
+  echo -e "ERROR: You need to \033[1;31mconda activate\033[0m your anaconda R environment."
+  exit 0
+fi
 for a in $y
   do 
     if [ -f $CWD/$a ]

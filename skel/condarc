@@ -1,0 +1,9 @@
+envs_dirs:
+  - /usr/local/usrapps/$GROUP/$USER
+pkgs_dirs:
+  - /share/$GROUP/$USER/conda/pkgs
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+env_prompt: '({name})'
