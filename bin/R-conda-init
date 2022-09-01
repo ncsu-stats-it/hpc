@@ -2,10 +2,8 @@
 # /bin/cp $HOME/hpc/skel/tcsh ~/.tcshrc
 # /bin/cp $HOME/hpc/skel/tcsh_aliases ~/.tcsh_aliases
 /bin/cp $HOME/hpc/skel/condarc $HOME/.condarc
-#sed -i "s|\$GROUP|$GROUP|g" $HOME/.condarc
-#sed -i "s|\$USER |$USER|g" $HOME/.condarc
-echo "DONE"
-exit 0
+sed -i "s|\$GROUP|$GROUP|g" $HOME/.condarc
+sed -i "s|\$USER |$USER|g" $HOME/.condarc
 /bin/cp -R $HOME/hpc/privatemodules $HOME
 chmod 755 $HOME/hpc/bin/*
 module load conda
