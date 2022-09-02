@@ -9,6 +9,7 @@ then <strong>UNITYID</strong>=jdoe22
 <hr>
 <h2>Initial Setup</h2>
 <pre>ssh UNITYID@login.hpc.ncsu.edu
+$ mkdir -p /usr/local/usrapps/$GROUP/$USER
 $ git clone https://github.com/ncsu-stats-it/hpc
 $ cd hpc
 $ git config merge.defaultToUpstream true
