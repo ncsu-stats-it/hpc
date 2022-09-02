@@ -5,3 +5,4 @@ conda deactivate         -> Deactivates Current R Environment.
 conda install -y r-akima -> Installs R Package "akima".
 conda update -y          -> Updates all install conda packages for environment.
 conda list               -> Displays what installed in Environment.
+conda env create -f env_R421.yml -p /usr/local/usrapps/$GROUP/$USER/env_R421
