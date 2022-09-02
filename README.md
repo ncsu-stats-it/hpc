@@ -17,7 +17,7 @@ $ source $HOME/.tcshrc
 $ source $HOME/hpc/bin/R-conda-init
 $ exit
 ssh UNITYID@login.hpc.ncsu.edu
-$ source $HOME/hpc/bin/R-env.csh  (This will take some time 10+ minutes)
+$ source $HOME/hpc/bin/R-env.csh  (This will take some time 15+ minutes)
 $ which R
 $ conda install -y r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodlim r-RankAggreg r-Rlab r-survival
 </pre>
@@ -26,7 +26,7 @@ $ conda install -y r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-p
 Periodically a new version of R will be release.<br>
 <pre>$ cd hpc
 $ git pull
-$ source $HOME/hpc/bin/R-env.csh (This will take some time 10+ minutes)
+$ source $HOME/hpc/bin/R-env.csh (This will take some time 15+ minutes)
 $ which R
 $ conda install -y r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodlim r-RankAggreg r-Rlab r-survival
 </pre>
