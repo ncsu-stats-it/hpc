@@ -43,9 +43,9 @@ $ ls
 $ bwsubmit 1 Rscript weather.R</li>
 $ bjobs</li>
 $ ls weather.pdf</li>
-$ less weather.\*.out
+$ less weather.*.out
 $ less run_weather.tcsh
-/pre>
+</pre>
 <hr>
 <h2>R Package Administration</h2>
 <pre>$ R-ProgramCheck weather.R
