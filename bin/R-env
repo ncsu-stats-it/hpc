@@ -19,5 +19,5 @@ cd /usr/local/usrapps/$GROUP/$USER
 /usr/local/apps/miniconda/bin/conda env list
 echo "Activating conda R environment"
 /usr/local/apps/miniconda/bin/conda activate /usr/local/usrapps/$GROUP/$USER/$R_ENV
-conda install -y -c conda-forge python=3.10.6 gfortran=12.1.0 gcc=12.1.0 r-base=4.2.1 r-devtools 
-conda install -y -c bioconda bioconductor-biocinstaller
+/usr/local/apps/miniconda/bin/conda install -y -c conda-forge python=3.10.6 gfortran=12.1.0 gcc=12.1.0 r-base=4.2.1 r-devtools 
+/usr/local/apps/miniconda/bin/conda install -y -c bioconda bioconductor-biocinstaller
