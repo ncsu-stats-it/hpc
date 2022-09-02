@@ -24,7 +24,8 @@ $ conda install -y r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-p
 <hr>
 <h2>Updated R</h2>
 Periodically a new version of R will be release.<br>
-<pre>$ cd hpc
+<pre>ssh UNITYID@login.hpc.ncsu.edu
+$ cd $HOME/hpc
 $ git pull
 $ source $HOME/hpc/bin/R-env.csh (This will take some time 15+ minutes)
 $ which R
@@ -41,6 +42,8 @@ $ conda install -y r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-p
 $ ls
 $ cp /usr/local/apps/samples/guide/weather.R .     (Example Program)
 $ ls
+$ conda activate env_R421
+$ which Rscript
 $ bwsubmit 1 Rscript weather.R</li>
 $ bjobs</li>
 $ ls weather.pdf</li>
