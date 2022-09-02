@@ -16,18 +16,18 @@ $ sh ./install-hpc-env
 $ source $HOME/.tcshrc
 $ source $HOME/hpc/bin/R-conda-init
 $ exit
-$ source $HOME/hpc/bin/R-env  (This will take some time 10+ minutes)
+$ source $HOME/hpc/bin/R-env.csh  (This will take some time 10+ minutes)
 $ which R
-$ R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival"
+$ R-PkgInstall r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodlim r-RankAggreg r-Rlab r-survival
 </pre>
 <hr>
 <h2>Updated R</h2>
 Periodically a new version of R will be release.<br>
 <pre>$ cd hpc
 $ git pull
-$ source $HOME/hpc/bin/R-env (This will take some time 10+ minutes)
+$ source $HOME/hpc/bin/R-env.csh (This will take some time 10+ minutes)
 $ which R
-$ R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival"
+$ R-PkgInstall r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodlim r-RankAggreg r-Rlab r-survival
 </pre>
 <hr>
 <h2>Running R Program</h2>

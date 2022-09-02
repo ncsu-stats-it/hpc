@@ -14,6 +14,7 @@ fi
 /bin/cp $HOME/hpc/skel/tcsh_aliases $HOME/.tcsh_aliases
 /bin/cp /etc/skel/.bashrc $HOME
 /bin/cp $HOME/hpc/module-help.txt $HOME
+/bin/cp $HOME/hpc/conda-help.txt $HOME
 
 /bin/cp $HOME/hpc/skel/condarc $HOME/.condarc
 sed -i "s|\$GROUP|$GROUP|g" $HOME/.condarc

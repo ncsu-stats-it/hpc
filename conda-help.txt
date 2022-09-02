@@ -1,0 +1,7 @@
+# Conda Help
+conda env list           -> List Available Conda Environments.
+conda activate env_R421  -> Activates R Environment.
+conda deactivate         -> Deactivates Current R Environment.
+conda install -y r-akima -> Installs R Package "akima".
+conda update -y          -> Updates all install conda packages for environment.
+conda list               -> Displays what installed in Environment.
