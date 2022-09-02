@@ -36,28 +36,21 @@ $ R-PkgInstall r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodl
 <strong>/share/$GROUP/$USER/</strong> (Shared Space = Larger Quota)</li>
 <li>See: <a href="https://hpc.ncsu.edu/Documents/CopyFiles.php">https://hpc.ncsu.edu/Documents/CopyFiles.php</a></li>
 <li>ssh UNITYID@login.hpc.ncsu.edu</li>
-<li>cd /share/$GROUP/$USER/</li>
-<li>ls</li>
-<li>cp /usr/local/apps/samples/guide/weather.R .
-<li>ls</li>
-<li>bwsubmit 1 Rscript weather.R</li>
-<li>bjobs</li>
-<li>ls weather.pdf</li>
-<li>less weather.*.out</li>
-<li>less run_weather.tcsh</li>
-<li><strong>[Repeat Option-1 (2 Cores)]</strong>
-<li>{modify} run_weather.tcsh</li>
-<li>$ bsub &lt; run_weather.tcsh</li>
-<li><strong>[Repeat Option-2 (2 Cores)]</strong>
-<li>bwsubmit 2 Rscript weather.R</li>
-</ol>
+<pre>$ cd /share/$GROUP/$USER/
+$ ls
+$ cp /usr/local/apps/samples/guide/weather.R .
+$ ls
+$ bwsubmit 1 Rscript weather.R</li>
+$ bjobs</li>
+$ ls weather.pdf</li>
+$ less weather.\*.out
+$ less run_weather.tcsh
+/pre>
 <hr>
 <h2>R Package Administration</h2>
-<ul>
-<li>R-ProgramCheck weather.R</li>
-<li>R-PkgCheck robustHD</li>
-<li>conda install r-robustHD</li>
-<li>R-PkgInstall robustHD</li>
-<li>R-Pkgcheck robustHD</li>
-</ul>
+<pre>$ R-ProgramCheck weather.R
+$ R-PkgCheck robustHD
+$ conda install -y r-robustHD
+$ R-Pkgcheck robustHD
+</pre>
 <p>Occasionally you may <strong>not</strong> be able to install an R package.  When this occurs send an email to <a href="mailto:oit_hpc@help.ncsu.edu">oit_hpc@help.ncsu.edu</a> and ask for assitance. They may ask you to recreate your anaconda R environment using different parameters.</p>
