@@ -7,8 +7,8 @@ sed -i "s|\$USER|$USER|g" $HOME/.condarc
 /bin/cp -R $HOME/hpc/privatemodules $HOME
 chmod 755 $HOME/hpc/bin/*
 conda init tcsh
-echo "LogOff.. 
-echo {type:} exit [Enter]"
+echo "LogOff.. "
+echo "{type:} exit [Enter]"
 echo "=========================="
 echo "Login again.."
 echo "{type:} R-env"
