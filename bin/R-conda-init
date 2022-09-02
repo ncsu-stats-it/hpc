@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/tcsh
 # /bin/cp $HOME/hpc/skel/tcsh ~/.tcshrc
 # /bin/cp $HOME/hpc/skel/tcsh_aliases ~/.tcsh_aliases
 /bin/cp $HOME/hpc/skel/condarc $HOME/.condarc
