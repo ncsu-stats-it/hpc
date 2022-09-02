@@ -9,6 +9,7 @@ CWD=`pwd`
 # RSYSLIB="$HOME/.conda/envs/$CONDA_DEFAULT_ENV/lib/R/library"
 # cd $RSYSLIB
 y=`echo ${@} | sed -e "s/,/\ /g"`
+echo $y
 if ! [ $R_HOME ];
   then
     RHOME=`which R 2>/dev/null`
@@ -16,15 +17,21 @@ if ! [ $R_HOME ];
     R_HOME=$(dirname "$RPATH")
 fi
 if [ ! $RHOME ]; then
-  echo -e "ERROR: You need to \033[1;31mconda activate\033[0m your anaconda R environment."
-  exit 0
+   echo -e "ERROR: You need to \033[1;31mconda activate\033[0m your anaconda R environment."
+   exit 0
 fi
-for a in $y
-  do 
-    if [ -f $CWD/$a ]
-       then
-	  R -e "install.packages('$CWD/$a',dependencies=TRUE,repos=NULL,type=\"source\")"
-       else
-	  R -e "install.packages('$a',dependencies=TRUE,repos=\"https://cran.rstudio.com/\")"
-    fi
-done
+if [ -f "$CWD/$y" ];then
+	R -e "install.packages('$CWD/$y',dependencies=TRUE,repos=NULL,type=\"source\")"
+else
+	echo "conda install -y $y"
+        conda install -y $y
+fi
+# for a in $y
+#  do 
+#    if [ -f $CWD/$a ]
+#       then
+#	  R -e "install.packages('$CWD/$a',dependencies=TRUE,repos=NULL,type=\"source\")"
+#       else
+#	  R -e "install.packages('$a',dependencies=TRUE,repos=\"https://cran.rstudio.com/\")"
+#    fi
+# done
