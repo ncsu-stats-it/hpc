@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/tcsh
 NOW=`date +%Y%m%d-%H%M%S`
 echo "[Adding] .tcshrc .tcshrc-aliases -> $HOME"
 if [ -f "$HOME/.tcshrc" ]; then
