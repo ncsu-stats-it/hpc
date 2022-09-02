@@ -13,7 +13,7 @@ $ sh ./install-hpc-env
 $ source $HOME/.tcshrc
 $ source $HOME/hpc/bin/R-conda-init
 $ exit
-$ source $HOME/hpc/bin/R-env  (This will take some time ~5+ minutes)
+$ source $HOME/hpc/bin/R-env  (This will take some time 10+ minutes)
 $ which R
 $ R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival"
 </pre>
@@ -22,8 +22,10 @@ $ R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodli
 Periodically a new version of R will be release.<br>
 <pre>$ cd hpc
 $ git pull
-$ exit
-ssh UNITYID@login.hpc.ncsu.edu</pre>
+$ source $HOME/hpc/bin/R-env (This will take some time 10+ minutes)
+$ which R
+$ R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival"
+</pre>
 <hr>
 <h2>Running R Program</h2>
 <ol>
