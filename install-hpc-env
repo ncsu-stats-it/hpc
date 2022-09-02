@@ -1,14 +1,26 @@
 #!/usr/bin/bash
 NOW=`date +%Y%m%d-%H%M%S`
-echo "[Adding] .tcshrc .tcshrc-aliases -> $HOME"
+echo "[Altering] .bashrc .tcshrc .tcshrc-aliases -> $HOME"
 if [ -f "$HOME/.tcshrc" ]; then
   /bin/mv $HOME/.tcshrc $HOME/.tcshrc.$NOW.bkup
 fi
-/bin/cp $HOME/hpc/skel/tcshrc $HOME/.tcshrc
 if [ -f "$HOME/.tcsh_aliases" ]; then
   /bin/mv $HOME/.tcsh_aliases $HOME/.tcsh_aliases.$NOW.bkup
 fi
+if [ -f "$HOME/.bashrc" ]; then
+  /bin/mv $HOME/.bashrc $HOME/.bashrc.$NOW.bkup
+fi
+/bin/cp $HOME/hpc/skel/tcshrc $HOME/.tcshrc
 /bin/cp $HOME/hpc/skel/tcsh_aliases $HOME/.tcsh_aliases
+/bin/cp /etc/skel/.bashrc $HOME
 /bin/cp $HOME/hpc/module-help.txt $HOME
+
+/bin/cp $HOME/hpc/skel/condarc $HOME/.condarc
+sed -i "s|\$GROUP|$GROUP|g" $HOME/.condarc
+sed -i "s|\$USER|$USER|g" $HOME/.condarc
+/bin/cp -R $HOME/hpc/privatemodules $HOME
+chmod 755 $HOME/hpc/bin/*
+
+
 echo "source \$HOME/.tcshrc"
 echo "source \$HOME/hpc/bin/R-conda-init"
