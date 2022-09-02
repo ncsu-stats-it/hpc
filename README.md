@@ -50,7 +50,7 @@ $ less run_weather.tcsh
 <h2>R Package Administration</h2>
 <pre>$ R-ProgramCheck weather.R
 $ R-PkgCheck robustHD
-$ conda install -y r-robustHD
+$ conda install -y r-robustHD   (Add r- to name of R-Package)
 $ R-Pkgcheck robustHD
 </pre>
 <p>Occasionally you may <strong>not</strong> be able to install an R package.  When this occurs send an email to <a href="mailto:oit_hpc@help.ncsu.edu">oit_hpc@help.ncsu.edu</a> and ask for assitance. They may ask you to recreate your anaconda R environment using different parameters.</p>
