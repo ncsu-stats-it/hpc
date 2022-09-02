@@ -38,7 +38,7 @@ $ R-PkgInstall r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodl
 <li>ssh UNITYID@login.hpc.ncsu.edu</li>
 <pre>$ cd /share/$GROUP/$USER/
 $ ls
-$ cp /usr/local/apps/samples/guide/weather.R .
+$ cp /usr/local/apps/samples/guide/weather.R .     (Example Program)
 $ ls
 $ bwsubmit 1 Rscript weather.R</li>
 $ bjobs</li>
@@ -46,6 +46,7 @@ $ ls weather.pdf</li>
 $ less weather.*.out
 $ less run_weather.tcsh
 </pre>
+</ol>
 <hr>
 <h2>R Package Administration</h2>
 <pre>$ R-ProgramCheck weather.R
