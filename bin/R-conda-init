@@ -6,7 +6,6 @@ sed -i "s|\$GROUP|$GROUP|g" $HOME/.condarc
 sed -i "s|\$USER|$USER|g" $HOME/.condarc
 /bin/cp -R $HOME/hpc/privatemodules $HOME
 chmod 755 $HOME/hpc/bin/*
-module load conda
 conda init tcsh
 echo "LogOff.. 
 echo {type:} exit [Enter]"
