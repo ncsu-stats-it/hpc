@@ -1,4 +1,4 @@
-#!/usr/bin/tcsh
+#!/usr/bin/bash
 NOW=`date +%Y%m%d-%H%M%S`
 echo "[Adding] .tcshrc .tcshrc-aliases -> $HOME"
 if [ -f "$HOME/.tcshrc" ]; then
@@ -11,4 +11,4 @@ fi
 /bin/cp $HOME/hpc/skel/tcsh_aliases $HOME/.tcsh_aliases
 /bin/cp $HOME/hpc/module-help.txt $HOME
 echo "source \$HOME/.tcshrc"
-echo "sh \$HOME/hpc/bin/R-conda-init"
+echo "source \$HOME/hpc/bin/R-conda-init"

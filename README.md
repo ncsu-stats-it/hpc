@@ -11,10 +11,11 @@ $ cd hpc
 $ git config merge.defaultToUpstream true
 $ sh ./install-hpc-env
 $ source $HOME/.tcshrc
-$ sh ./bin/R-conda-init
+$ source $HOME/hpc/bin/R-conda-init
 $ exit
-$ source R-env
+$ source $HOME/hpc/bin/R-env  (This will take some time ~5+ minutes)
 $ which R
+$ R-PkgInstall "akima","bootstrap","fGarch","rmarkdown","lars","MLEcens","prodlim","RankAggreg","Rlab","survival"
 </pre>
 <hr>
 <h2>Updated R</h2>
@@ -30,7 +31,7 @@ ssh UNITYID@login.hpc.ncsu.edu</pre>
 <strong>/share/statistics/$USER/</strong> (Shared Space = Larger Quota)</li>
 <li>See: <a href="https://hpc.ncsu.edu/Documents/CopyFiles.php">https://hpc.ncsu.edu/Documents/CopyFiles.php</a></li>
 <li>ssh UNITYID@login.hpc.ncsu.edu</li>
-<li>cd /share/statistics/$USER/</li>
+<li>cd /share/$GROUP/$USER/</li>
 <li>ls</li>
 <li>cp /usr/local/apps/samples/guide/weather.R .
 <li>ls</li>
