@@ -13,7 +13,7 @@ $ sh ./install-hpc-env
 $ source $HOME/.tcshrc
 $ sh ./bin/R-conda-init
 $ exit
-$ R-env
+$ source R-env
 $ which R
 </pre>
 <hr>
