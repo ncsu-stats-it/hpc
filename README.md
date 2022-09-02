@@ -16,6 +16,7 @@ $ sh ./install-hpc-env
 $ source $HOME/.tcshrc
 $ source $HOME/hpc/bin/R-conda-init
 $ exit
+ssh UNITYID@login.hpc.ncsu.edu
 $ source $HOME/hpc/bin/R-env.csh  (This will take some time 10+ minutes)
 $ which R
 $ R-PkgInstall r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodlim r-RankAggreg r-Rlab r-survival
