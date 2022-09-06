@@ -5,7 +5,11 @@ https://hpc.ncsu.edu/main.php<br>
 Due to the quanity of users and number of compute nodes, Campus prefers you use Anaconda to install R your add-on packages.  The <a href="https://hpc.ncsu.edu/Software/Apps.php?app=Conda">instructions</a> currently provided by campus are not "clear" therefore I have provided the following: <br>
 &nbsp;<br>
 If your campus email is: jdoe22@ncsu.edu <br>
-then <strong>UNITYID</strong>=jdoe22 
+then <strong>UNITYID</strong>=jdoe22<br>
+<p>
+For most users:<br>
+$GROUP=<strong>statistics</strong><br>
+$USER=<strong>UNITYID</strong><br>
 <hr>
 <h2>Initial Setup</h2>
 <pre>ssh UNITYID@login.hpc.ncsu.edu
@@ -18,7 +22,7 @@ $ source $HOME/.tcshrc
 $ source $HOME/hpc/bin/R-conda-init
 $ exit
 ssh UNITYID@login.hpc.ncsu.edu
-$ source $HOME/hpc/bin/R-env.csh  (This will take some time 15+ minutes)
+$ source $HOME/hpc/bin/R-env.csh  (This will take some time 20+ minutes)
 $ which R
 $ conda install -y r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodlim r-RankAggreg r-Rlab r-survival
 </pre>
@@ -28,7 +32,7 @@ Periodically a new version of R will be release.<br>
 <pre>ssh UNITYID@login.hpc.ncsu.edu
 $ cd $HOME/hpc
 $ git pull
-$ source $HOME/hpc/bin/R-env.csh (This will take some time 15+ minutes)
+$ source $HOME/hpc/bin/R-env.csh (This will take some time 20+ minutes)
 $ which R
 $ conda install -y r-akima r-bootstrap r-fGarch r-rmarkdown r-lars r-MLEcens r-prodlim r-RankAggreg r-Rlab r-survival
 </pre>
