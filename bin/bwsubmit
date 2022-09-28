@@ -93,7 +93,7 @@ else
 	echo "#BSUB -n 1                       # Number of Cores" >> $BATCHSCRIPT
 fi
 echo "#BSUB -J $SHORTNAME            # Job Name" >> $BATCHSCRIPT
-echo "#BSUB -W 09:55               # Wall Clock time (HH:MM)" >> $BATCHSCRIPT
+echo "#BSUB -W 216:55               # Wall Clock time (HH:MM)" >> $BATCHSCRIPT
 echo "#BSUB -oo $SHORTNAME.%J.out    # Output File" >> $BATCHSCRIPT
 echo "#BSUB -eo $SHORTNAME.%J.err    # Error File" >> $BATCHSCRIPT
 echo "" >> $BATCHSCRIPT
