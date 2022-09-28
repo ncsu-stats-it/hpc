@@ -68,7 +68,7 @@ $ less run_weather.tcsh
 (env_R421)$ conda install -y r-akima   (Add r- to name of R package)
 (env_R421)$ R-Pkgcheck akima
 </pre>
-If the package is <strong>not</strong> found with conda search, then you install via R
+If the package is <strong>not</strong> found with <strong><em>conda search</em></strong>, then you install via R
 <pre>(env_R421)$ R
 > install.packages(c("face"))
 > library("face")
