@@ -60,9 +60,19 @@ $ less run_weather.tcsh
 </ol>
 <hr>
 <h2>R Package Administration</h2>
-<pre>$ R-ProgramCheck weather.R
-$ R-PkgCheck akima
-$ conda install -y r-akima   (Add r- to name of R package)
-$ R-Pkgcheck akima 
+<pre>$ conda activate env_R421
+(env_R421)$ R-ProgramCheck weather.R
+(env_R421)$ R-PkgCheck akima
+(env_R421)$ conda search r-akima
+[This will take some time to search the Anconda sources]
+(env_R421)$ conda install -y r-akima   (Add r- to name of R package)
+(env_R421)$ R-Pkgcheck akima
+
+[** If the package is not found with conda search, then install via R**]
+(env_R421)$ R
+> install.packages(c("face"))
+> library("face")
+> q()
+$ bsub run_weather.tcsh 
 </pre>
 <p>Occasionally you may <strong>not</strong> be able to install an R package.  When this occurs send an email to <a href="mailto:oit_hpc@help.ncsu.edu">oit_hpc@help.ncsu.edu</a> and ask for assitance. They may ask you to recreate your anaconda R environment using different parameters.</p>
