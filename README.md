@@ -50,12 +50,12 @@ $ ls
 $ cp /usr/local/apps/samples/guide/weather.R .     (Example Program)
 $ ls
 $ conda activate env_R421
-$ which Rscript
-$ bwsubmit 1 Rscript weather.R</li>
-$ bjobs</li>
-$ ls weather.pdf</li>
-$ less weather.*.out
-$ less run_weather.tcsh
+(env_R421)$ which Rscript
+(env_R421)$ bwsubmit 1 Rscript weather.R</li>
+(env_R421)$ bjobs</li>
+(env_R421)$ ls weather.pdf</li>
+(env_R421)$ less weather.*.out
+(env_R421)$ less run_weather.tcsh
 </pre>
 </ol>
 <hr>
@@ -73,6 +73,7 @@ If the package is <strong>not</strong> found with <strong><em>conda search</em><
 > install.packages(c("face"))
 > library("face")
 > q()
-$ bsub run_weather.tcsh 
+(env_R421)$ cd /share/$GROUP/$USER/
+(env_R421)$ bsub run_weather.tcsh 
 </pre>
 <p>Occasionally you may <strong>not</strong> be able to install an R package.  When this occurs send an email to <a href="mailto:oit_hpc@help.ncsu.edu">oit_hpc@help.ncsu.edu</a> and ask for assitance. They may ask you to recreate your anaconda R environment using different parameters.</p>
