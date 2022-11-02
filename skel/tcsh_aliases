@@ -8,3 +8,5 @@ alias more 'less'
 alias whois 'whois -h whois.ncsu.edu'
 alias finger 'getent passwd'
 alias hes 'whois -h whois.ncsu.edu account'
+alias show-time 'date +"%I:%M:%S %p"'
+

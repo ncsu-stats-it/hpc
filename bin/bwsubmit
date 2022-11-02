@@ -13,6 +13,9 @@ if ! [ -z $R_HOME ]; then
        RHOME=`which R &2>/dev/null`
        RPATH=$(dirname "$RHOME")
        R_HOME=$(dirname "$RPATH")
+else
+       echo "R not found"
+       echo "conda activate first"
 fi
 if [ $LOGNAME == "root" ]; then
         echo "You are 'root' job aborted."
