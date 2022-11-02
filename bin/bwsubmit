@@ -16,6 +16,7 @@ if ! [ -z $R_HOME ]; then
 else
        echo "R not found"
        echo "conda activate first"
+       exit 0
 fi
 if [ $LOGNAME == "root" ]; then
         echo "You are 'root' job aborted."
