@@ -9,7 +9,7 @@ CWD=`pwd`
 PARAMS=${@}
 APP=$1
 NAME=$2
-if ! [ -z $R_HOME ]; then
+if ! [ $R_HOME ]; then
        RHOME=`which R &2>/dev/null`
        RPATH=$(dirname "$RHOME")
        R_HOME=$(dirname "$RPATH")
