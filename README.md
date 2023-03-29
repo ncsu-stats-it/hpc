@@ -1,4 +1,4 @@
-<h1>DO NOT USE</h1>
+<h1>PLEASE....DO NOT USE</h1>
 This was setup back in August of 2022.  Since then the OIT cluster has changed and they don't appreciate the use of these configuration/scripts.<br>
 &nbsp;<br>
 As of Jan 2023, they are no longer using the .tcshrc as the user default environment.  Therefore all the scripts here are not valid.  I should <strong>DELETE</strong> all this information.  However I'm wanting to keep it as reference point in case I need to establish something similar in the future.<br>
