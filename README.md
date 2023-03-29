@@ -1,3 +1,11 @@
+<h1>DO NOT USE</h1>
+This was setup back in August of 2022.  Since then the OIT cluster has changed and they don't appreciate the use of these configuration/scripts.
+<p>
+As of Jan 2023, they are no longer using the .tcshrc as the user default environment.  Therefore all the scripts here are not valid.  I should <strong>DELETE</strong> all this information.  However I'm wanting to keep it as reference point in case I need to establish something similar in the future.
+<p>
+Sorry if you are still referencing it.<br>
+-Terry-
+<hr> 
 <h1>HPC</h1>
 The folowing will setup your base R-environment and the minimal packages you will need to start running R simulations on the NCSU HPC linux cluster.
 https://hpc.ncsu.edu/main.php<br>
